@@ -22,6 +22,7 @@ namespace _01_Authentication
     /// </summary>
     public partial class MainWindow : Window
     {
+        SqlConnection connection = null;
         public MainWindow()
         {
             InitializeComponent();
@@ -40,6 +41,7 @@ namespace _01_Authentication
             {
                 tb_log.Visibility = Visibility;
                 tb_password.Visibility = Visibility;
+                tb_ip.Visibility = Visibility;
             }
 
         }
@@ -47,6 +49,8 @@ namespace _01_Authentication
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
+            //===================Windows Authentication
             if (cb.SelectedIndex == 0)
             {
                 MessageBox.Show("Windows Authentication");
@@ -54,71 +58,18 @@ namespace _01_Authentication
                 string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;
                                         Initial catalog=master;
                                         Integrated Security=true;";
-              
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    try
-                    {
-                        connection.Open();
-                        
-                        string commandText = "select name from sys.databases";
-                        SqlCommand command = new SqlCommand(commandText, connection);
-                        SqlDataReader reader = command.ExecuteReader();
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                lb_db.Items.Add(reader.GetString(0));
-                            }
-                        }
-                        reader.Close();
-                    }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-
+                ConnectToServer(connectionString);
 
             }
+            //===================Server Authentication
             else if (cb.SelectedIndex == 1)
-            {               
+            {
                 MessageBox.Show("Server Authentication");
-                
-                {
-                    string connectionString = @"Data Source=194.44.93.225;Initial Catalog=master;
-                                        Integrated Security=false; User Id=test; Password=1";
+                string connectionString = @"Data Source={0};Initial Catalog=master;
+                                        Integrated Security=false; User Id={1}; Password={2}";
 
-
-                
-
-                    using (SqlConnection connection = new SqlConnection(connectionString))
-                    {
-                        try
-                        {
-                            connection.Open();
-
-                            string commandText = "select name from sys.databases";
-                            SqlCommand command = new SqlCommand(commandText, connection);
-                            SqlDataReader reader = command.ExecuteReader();
-                            if (reader.HasRows)
-                            {
-                                while (reader.Read())
-                                {
-                                    lb_db.Items.Add(reader.GetString(0));
-                                }
-                            }
-                            reader.Close();
-
-                        }
-                        catch (SqlException ex)
-                        {
-                            Console.WriteLine(ex.Message);
-                        }
-                    }
-                }
-             
-
+                connectionString = String.Format(connectionString, tb_ip.Text, tb_log.Text, tb_password.Text);
+                ConnectToServer(connectionString);
             }
             else
             {
@@ -126,16 +77,78 @@ namespace _01_Authentication
             }
         }
 
-
-        private void Up_Click(object sender, RoutedEventArgs e)
+        private void ConnectToServer(string connectionString)
         {
-            scroll.LineUp();
+            connection = new SqlConnection(connectionString);
+                try
+                {
+                    connection.Open();
+                    FillDatabases(connection);
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
         }
 
-        private void Down_Click(object sender, RoutedEventArgs e)
+        private void FillDatabases(SqlConnection connection)
         {
-            scroll.LineDown();
+           var res = MakeQuery(connection, "sys.databases");
+            foreach (var item in res)
+            {
+                cb_db.Items.Add(item);
+            }
+
+
         }
+
+        private List<string> MakeQuery(SqlConnection connection, string table)
+        {
+            List<string> results = new List<string>();
+            string commandText = $"select name from {table}";
+            SqlCommand command = new SqlCommand(commandText, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    results.Add(reader.GetString(0));
+                }
+            }
+            reader.Close();
+            return results;
+        }
+
+        private void Cb_db_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedDb = cb_db.SelectedItem.ToString();
+            FillTables(selectedDb);
+
+        }
+
+        
+        private void FillTables(string selectedDb)
+        {
+            connection.ChangeDatabase(selectedDb);
+            var res = MakeQuery(connection, "sys.tables");
+            foreach (var item in res)
+            {
+                cb_table.Items.Add(item);
+            }
+        }
+
+
+
+
+        //private void Up_Click(object sender, RoutedEventArgs e)
+        //{
+        //    scroll.LineUp();
+        //}
+
+        //private void Down_Click(object sender, RoutedEventArgs e)
+        //{
+        //    scroll.LineDown();
+        //}
 
     }
 }

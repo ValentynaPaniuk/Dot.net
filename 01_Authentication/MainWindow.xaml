@@ -5,46 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01_Authentication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400">
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
 
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+                       
         </Grid.RowDefinitions>
 
-        <ComboBox Grid.Row="0"  Name="cb" HorizontalAlignment="Left" Height="50" Margin="45,40,0,0" VerticalAlignment="Top" Width="272" RenderTransformOrigin="-4.574,-0.875" SelectionChanged="Cb_SelectionChanged">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ComboBox Grid.Row="0" Grid.Column="0"  Name="cb" HorizontalAlignment="Left" Height="50" Margin="45,40,0,0" VerticalAlignment="Top" Width="150" RenderTransformOrigin="-4.574,-0.875" SelectionChanged="Cb_SelectionChanged">
             <ComboBoxItem Content="Windows Authentication"/>
             <ComboBoxItem Content="Server Authentication"/>
         </ComboBox>
 
-        <StackPanel Grid.Row="1">
-            <TextBox Name="tb_log" Width="300" HorizontalAlignment="Center" Visibility="Hidden">Login</TextBox>
-            <TextBox Name="tb_password" Width="300" HorizontalAlignment="Center" Visibility="Hidden">Password</TextBox>
-            <TextBox Name="tb_ip" Width="300" HorizontalAlignment="Center" Visibility="Hidden">IP Server</TextBox>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <TextBox Name="tb_log" Width="100" HorizontalAlignment="Center" Visibility="Hidden">Login</TextBox>
+            <TextBox Name="tb_password" Width="100" HorizontalAlignment="Center" Visibility="Hidden">Password</TextBox>
+            <TextBox Name="tb_ip" Width="100" HorizontalAlignment="Center" Visibility="Hidden">IP Server</TextBox>
         </StackPanel>
 
-        <StackPanel Grid.Row="2">
-            <Button Width="100" Height="50" 
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Button Width="100" Height="40" 
                     VerticalAlignment="Center" 
-                    HorizontalAlignment="Center" Margin="25" Content="Connect" Click="Button_Click"></Button>
+                    HorizontalAlignment="Center" Margin="80" Content="Connect" Click="Button_Click"></Button>
         </StackPanel>
 
-        <StackPanel Grid.Row="3">
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Margin="30">
 
-            <ScrollViewer Name="scroll" CanContentScroll="True" Height="100">
-                <ListBox Name="lb_db" Background="Aqua"/>
+            <!--<ScrollViewer Name="scroll" CanContentScroll="True" Height="100">-->
+                <ComboBox Name="cb_db" Background="Aqua" SelectionChanged="Cb_db_SelectionChanged"/>
 
-
-            </ScrollViewer>
-
-
+            <!--</ScrollViewer>-->
         </StackPanel>
-       
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="30">
+            <ListBox Name="cb_table" Background="Red" />
+        </StackPanel>
 
-       
+        <StackPanel Grid.Row="0" Grid.Column="2" Margin="30">
+            <ListBox Name="lb_column" Background="Green" />
+        </StackPanel>
+
+
+
 
 
 
