@@ -1,0 +1,58 @@
+﻿<Window x:Class="_01_Authentication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_01_Authentication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <ComboBox Grid.Row="0"  Name="cb" HorizontalAlignment="Left" Height="50" Margin="45,40,0,0" VerticalAlignment="Top" Width="272" RenderTransformOrigin="-4.574,-0.875" SelectionChanged="Cb_SelectionChanged">
+            <ComboBoxItem Content="Windows Authentication"/>
+            <ComboBoxItem Content="Server Authentication"/>
+        </ComboBox>
+
+        <StackPanel Grid.Row="1">
+            <TextBox Name="tb_log" Width="300" HorizontalAlignment="Center" Visibility="Hidden">Login</TextBox>
+            <TextBox Name="tb_password" Width="300" HorizontalAlignment="Center" Visibility="Hidden">Password</TextBox>
+            <TextBox Name="tb_ip" Width="300" HorizontalAlignment="Center" Visibility="Hidden">IP Server</TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <Button Width="100" Height="50" 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" Margin="25" Content="Connect" Click="Button_Click"></Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3">
+
+            <ScrollViewer Name="scroll" CanContentScroll="True" Height="100">
+                <ListBox Name="lb_db" Background="Aqua"/>
+
+
+            </ScrollViewer>
+
+
+        </StackPanel>
+       
+
+       
+
+
+
+
+
+
+    </Grid>
+
+
+</Window>
+

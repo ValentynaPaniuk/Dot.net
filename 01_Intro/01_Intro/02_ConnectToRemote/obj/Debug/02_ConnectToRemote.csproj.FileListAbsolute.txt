@@ -1,0 +1,7 @@
+D:\Ado.Net\01_Intro\02_ConnectToRemote\bin\Debug\02_ConnectToRemote.exe.config
+D:\Ado.Net\01_Intro\02_ConnectToRemote\bin\Debug\02_ConnectToRemote.exe
+D:\Ado.Net\01_Intro\02_ConnectToRemote\bin\Debug\02_ConnectToRemote.pdb
+D:\Ado.Net\01_Intro\02_ConnectToRemote\obj\Debug\02_ConnectToRemote.csprojAssemblyReference.cache
+D:\Ado.Net\01_Intro\02_ConnectToRemote\obj\Debug\02_ConnectToRemote.csproj.CoreCompileInputs.cache
+D:\Ado.Net\01_Intro\02_ConnectToRemote\obj\Debug\02_ConnectToRemote.exe
+D:\Ado.Net\01_Intro\02_ConnectToRemote\obj\Debug\02_ConnectToRemote.pdb
