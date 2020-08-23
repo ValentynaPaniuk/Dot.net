@@ -1,0 +1,7 @@
+D:\Шаг\Dot.Net\02_StoredProcedures\bin\Debug\02_StoredProcedures.exe.config
+D:\Шаг\Dot.Net\02_StoredProcedures\bin\Debug\02_StoredProcedures.exe
+D:\Шаг\Dot.Net\02_StoredProcedures\bin\Debug\02_StoredProcedures.pdb
+D:\Шаг\Dot.Net\02_StoredProcedures\obj\Debug\02_StoredProcedures.csprojAssemblyReference.cache
+D:\Шаг\Dot.Net\02_StoredProcedures\obj\Debug\02_StoredProcedures.csproj.CoreCompileInputs.cache
+D:\Шаг\Dot.Net\02_StoredProcedures\obj\Debug\02_StoredProcedures.exe
+D:\Шаг\Dot.Net\02_StoredProcedures\obj\Debug\02_StoredProcedures.pdb

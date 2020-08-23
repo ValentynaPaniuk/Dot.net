@@ -1,0 +1,17 @@
+D:\Шаг\Dot.Net\03_AddStudentInDB\obj\Debug\03_AddStudentInDB.csprojAssemblyReference.cache
+D:\Шаг\Dot.Net\03_AddStudentInDB\obj\Debug\MainWindow.g.cs
+D:\Шаг\Dot.Net\03_AddStudentInDB\obj\Debug\03_AddStudentInDB_MarkupCompile.cache
+D:\Шаг\Dot.Net\03_AddStudentInDB\obj\Debug\03_AddStudentInDB_MarkupCompile.lref
+D:\Шаг\Dot.Net\03_AddStudentInDB\bin\Debug\03_AddStudentInDB.exe.config
+D:\Шаг\Dot.Net\03_AddStudentInDB\bin\Debug\03_AddStudentInDB.exe
+D:\Шаг\Dot.Net\03_AddStudentInDB\bin\Debug\03_AddStudentInDB.pdb
+D:\Шаг\Dot.Net\03_AddStudentInDB\obj\Debug\App.g.cs
+D:\Шаг\Dot.Net\03_AddStudentInDB\obj\Debug\MainWindow.baml
+D:\Шаг\Dot.Net\03_AddStudentInDB\obj\Debug\03_AddStudentInDB.g.resources
+D:\Шаг\Dot.Net\03_AddStudentInDB\obj\Debug\_03_AddStudentInDB.Properties.Resources.resources
+D:\Шаг\Dot.Net\03_AddStudentInDB\obj\Debug\03_AddStudentInDB.csproj.GenerateResource.cache
+D:\Шаг\Dot.Net\03_AddStudentInDB\obj\Debug\03_AddStudentInDB.csproj.CoreCompileInputs.cache
+D:\Шаг\Dot.Net\03_AddStudentInDB\obj\Debug\03_AddStudentInDB.exe
+D:\Шаг\Dot.Net\03_AddStudentInDB\obj\Debug\03_AddStudentInDB.pdb
+D:\Шаг\Dot.Net\03_AddStudentInDB\obj\Debug\AddStudent.g.cs
+D:\Шаг\Dot.Net\03_AddStudentInDB\obj\Debug\AddStudent.baml
