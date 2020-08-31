@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <Authors>
+    <Id>1</Id>
+    <Name>R.S.Martin</Name>
+  </Authors>
+  <Authors>
+    <Id>2</Id>
+    <Name>J.K. Roling</Name>
+  </Authors>
+  <Authors>
+    <Id>3</Id>
+    <Name>L. Kostenko</Name>
+  </Authors>
+  <Authors>
+    <Id>4</Id>
+    <Name>S. Lafore</Name>
+  </Authors>
+</DocumentElement>

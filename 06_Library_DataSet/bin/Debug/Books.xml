@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <Books>
+    <Id>1014</Id>
+    <Name>Tom</Name>
+    <Desc>A</Desc>
+    <Year>2020</Year>
+    <Pages>50</Pages>
+    <Img>test</Img>
+    <Author_Id>1</Author_Id>
+    <Genre_Id>1</Genre_Id>
+    <Picture>System.Byte[]</Picture>
+  </Books>
+  <Books>
+    <Id>1016</Id>
+    <Name>A</Name>
+    <Desc>A</Desc>
+    <Year>2020</Year>
+    <Pages>50</Pages>
+    <Img>test</Img>
+    <Author_Id>1</Author_Id>
+    <Genre_Id>1</Genre_Id>
+    <Picture>System.Byte[]</Picture>
+  </Books>
+  <Books>
+    <Id>1018</Id>
+    <Name>Test</Name>
+    <Desc>A</Desc>
+    <Year>2020</Year>
+    <Pages>120</Pages>
+    <Img>test</Img>
+    <Author_Id>1</Author_Id>
+    <Genre_Id>1</Genre_Id>
+    <Picture>System.Byte[]</Picture>
+  </Books>
+</DocumentElement>
