@@ -1,0 +1,12 @@
+I:\Paniuk\07_EF\07_EF\obj\Debug\07_EF.csprojAssemblyReference.cache
+I:\Paniuk\07_EF\07_EF\obj\Debug\07_EF.csproj.CoreCompileInputs.cache
+I:\Paniuk\07_EF\07_EF\bin\Debug\07_EF.exe.config
+I:\Paniuk\07_EF\07_EF\bin\Debug\07_EF.exe
+I:\Paniuk\07_EF\07_EF\bin\Debug\07_EF.pdb
+I:\Paniuk\07_EF\07_EF\bin\Debug\EntityFramework.dll
+I:\Paniuk\07_EF\07_EF\bin\Debug\EntityFramework.SqlServer.dll
+I:\Paniuk\07_EF\07_EF\bin\Debug\EntityFramework.xml
+I:\Paniuk\07_EF\07_EF\bin\Debug\EntityFramework.SqlServer.xml
+I:\Paniuk\07_EF\07_EF\obj\Debug\07_EF.csproj.CopyComplete
+I:\Paniuk\07_EF\07_EF\obj\Debug\07_EF.exe
+I:\Paniuk\07_EF\07_EF\obj\Debug\07_EF.pdb
