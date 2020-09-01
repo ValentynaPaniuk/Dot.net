@@ -1,0 +1,7 @@
+D:\Шаг\Dot.Net\07_Linq_to_SQL\bin\Debug\07_Linq_to_SQL.exe.config
+D:\Шаг\Dot.Net\07_Linq_to_SQL\bin\Debug\07_Linq_to_SQL.exe
+D:\Шаг\Dot.Net\07_Linq_to_SQL\bin\Debug\07_Linq_to_SQL.pdb
+D:\Шаг\Dot.Net\07_Linq_to_SQL\obj\Debug\07_Linq_to_SQL.csprojAssemblyReference.cache
+D:\Шаг\Dot.Net\07_Linq_to_SQL\obj\Debug\07_Linq_to_SQL.csproj.CoreCompileInputs.cache
+D:\Шаг\Dot.Net\07_Linq_to_SQL\obj\Debug\07_Linq_to_SQL.exe
+D:\Шаг\Dot.Net\07_Linq_to_SQL\obj\Debug\07_Linq_to_SQL.pdb
