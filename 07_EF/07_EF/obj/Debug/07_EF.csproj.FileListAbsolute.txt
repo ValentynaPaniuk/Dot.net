@@ -10,3 +10,15 @@ I:\Paniuk\07_EF\07_EF\bin\Debug\EntityFramework.SqlServer.xml
 I:\Paniuk\07_EF\07_EF\obj\Debug\07_EF.csproj.CopyComplete
 I:\Paniuk\07_EF\07_EF\obj\Debug\07_EF.exe
 I:\Paniuk\07_EF\07_EF\obj\Debug\07_EF.pdb
+D:\Шаг\Dot.Net\07_EF\07_EF\obj\Debug\07_EF.csprojAssemblyReference.cache
+D:\Шаг\Dot.Net\07_EF\07_EF\obj\Debug\07_EF.csproj.CoreCompileInputs.cache
+D:\Шаг\Dot.Net\07_EF\07_EF\obj\Debug\07_EF.exe
+D:\Шаг\Dot.Net\07_EF\07_EF\obj\Debug\07_EF.pdb
+D:\Шаг\Dot.Net\07_EF\07_EF\bin\Debug\07_EF.exe.config
+D:\Шаг\Dot.Net\07_EF\07_EF\bin\Debug\07_EF.exe
+D:\Шаг\Dot.Net\07_EF\07_EF\bin\Debug\07_EF.pdb
+D:\Шаг\Dot.Net\07_EF\07_EF\bin\Debug\EntityFramework.dll
+D:\Шаг\Dot.Net\07_EF\07_EF\bin\Debug\EntityFramework.SqlServer.dll
+D:\Шаг\Dot.Net\07_EF\07_EF\bin\Debug\EntityFramework.xml
+D:\Шаг\Dot.Net\07_EF\07_EF\bin\Debug\EntityFramework.SqlServer.xml
+D:\Шаг\Dot.Net\07_EF\07_EF\obj\Debug\07_EF.csproj.CopyComplete

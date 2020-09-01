@@ -13,10 +13,9 @@ namespace _07_EF
             UniversityEntities context = new UniversityEntities();
 
             //Delete student (Name from keyboard)
-
-
+            Console.WriteLine("Delete student (Name from keyboard)");
             //Alt+Enter - create function
-            Print(context);
+            PrintContextStudents(context);
 
             Console.WriteLine();
             try
@@ -36,10 +35,10 @@ namespace _07_EF
 
             Console.WriteLine();
 
-            Print(context);
+            PrintContextStudents(context);
 
             //Update Group in Student
-
+            Console.WriteLine("Update Group in Student (Name from keyboard)");
             Console.WriteLine();
             try
             {
@@ -58,10 +57,11 @@ namespace _07_EF
                 Console.WriteLine("Enter correct Name Student");
             }
 
-            Print(context);
+            PrintContextStudents(context);
 
 
             //Вивести всіх студентів певної групи
+            Console.WriteLine("Display all students in a group");
             try 
             {
                 Console.WriteLine("Enter Name Group of find : ");
@@ -85,6 +85,7 @@ namespace _07_EF
 
 
             //Знайти кількість студентів двох груп
+            Console.WriteLine("Find the number of students in two groups");
 
             try 
             {
@@ -110,23 +111,68 @@ namespace _07_EF
             }
 
             //Знайти студента з максимальною оцінкою по предмету С++
+            Console.WriteLine("Find a student with the maximum grade in the subject C++");
 
-            Student student = (Student)context.Achievements.Where(s => s.Subject.Name == "C++" && s.Mark==10);
-            Console.WriteLine($"Exellent Student:   {student.Name} {student.Surname}");
+            var maxMark = context.Achievements.Where(x => x.Subject.Name == "C++" && x.Student != null).Select(x => x.Mark).Max();
+
+            Console.WriteLine("Mark => " + maxMark);
+
+            var studentsCS = context.Achievements.Where(x => x.Subject.Name == "C#" && x.Mark == maxMark && x.Student != null).Select(x => x.Student).ToList();
+
+            if (studentsCS != null)
+                foreach (var item in studentsCS)
+                {
+                    Console.WriteLine($"{item.Name} {item.Surname} | {item.Group.Name}");
+                }
 
 
             //Знайти всі предмети, які читає Андрій Трофімчук
+            Console.WriteLine("Find all subjects read by Andriy Trofimchuk");
 
-            Subject sub = (Subject)context.Subjects.Where(s=> s.)
+            var subjects = context.TeachersGroups.Where(x => x.Teacher.Name == "Andrii" && x.Teacher.Surname == "Trofimchuk").Select(x => x.Subject);
+
+            foreach (var item in subjects)
+            {
+                Console.WriteLine($"{item.Name} {item.Department.Name}");
+            }
+
             //Знайти скільки студентів з іменем Оля
+            Console.WriteLine("Find how many students named Olya");
+
+            var nameOlia = context.Students.Count(x => x.Name == "Olia");
+
+            Console.WriteLine("Olia: " + nameOlia);
+
+
             //Студенту з мінімальною оцінкою змінити прізвище
+            Console.WriteLine("A student with a minimum grade should change his / her last name");
+            //PrintContextStudents(context);
+
+             var minMark = context.Achievements.Where(x => x.Subject.Name == "C#" && x.Student != null).Select(x => x.Mark).Max();
+
+            Console.WriteLine("Min Mark => " + minMark);
+
+            var studentsMinCS = context.Achievements.Where(x => x.Subject.Name == "C#" && x.Mark == minMark && x.Student != null).Select(x => x.Student).ToList();
+
+            
+
+            if (studentsMinCS != null)
+            {
+                foreach (var item in studentsMinCS)
+                {
+                    Console.Write($"Enter new surname for {item.Name} {item.Surname}: ");
+                    item.Surname = Console.ReadLine();
+                }
+                context.SaveChanges();
+            }
+
+            PrintContextStudents(context);
+
 
         }
 
-
-
-
-        private static void Print(UniversityEntities context)
+               
+        private static void PrintContextStudents(UniversityEntities context)
         {
             Console.WriteLine("=====================================");
             foreach (var item in context.Students)
@@ -135,5 +181,8 @@ namespace _07_EF
             }
             Console.WriteLine("=====================================");
         }
+
+
+
     }
 }
