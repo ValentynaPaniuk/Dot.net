@@ -1,0 +1,12 @@
+I:\Paniuk\08_ModelFirst\08_ModelFirst\obj\Debug\08_ModelFirst.csprojAssemblyReference.cache
+I:\Paniuk\08_ModelFirst\08_ModelFirst\obj\Debug\08_ModelFirst.csproj.CoreCompileInputs.cache
+I:\Paniuk\08_ModelFirst\08_ModelFirst\bin\Debug\08_ModelFirst.exe.config
+I:\Paniuk\08_ModelFirst\08_ModelFirst\bin\Debug\08_ModelFirst.exe
+I:\Paniuk\08_ModelFirst\08_ModelFirst\bin\Debug\08_ModelFirst.pdb
+I:\Paniuk\08_ModelFirst\08_ModelFirst\bin\Debug\EntityFramework.dll
+I:\Paniuk\08_ModelFirst\08_ModelFirst\bin\Debug\EntityFramework.SqlServer.dll
+I:\Paniuk\08_ModelFirst\08_ModelFirst\bin\Debug\EntityFramework.xml
+I:\Paniuk\08_ModelFirst\08_ModelFirst\bin\Debug\EntityFramework.SqlServer.xml
+I:\Paniuk\08_ModelFirst\08_ModelFirst\obj\Debug\08_ModelFirst.csproj.CopyComplete
+I:\Paniuk\08_ModelFirst\08_ModelFirst\obj\Debug\08_ModelFirst.exe
+I:\Paniuk\08_ModelFirst\08_ModelFirst\obj\Debug\08_ModelFirst.pdb
