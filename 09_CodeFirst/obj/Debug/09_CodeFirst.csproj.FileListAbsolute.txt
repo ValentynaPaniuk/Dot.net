@@ -16,3 +16,17 @@ D:\Шаг\Dot.Net\09_CodeFirst\obj\Debug\_09_CodeFirst.Migrations.IntBuilding.re
 D:\Шаг\Dot.Net\09_CodeFirst\obj\Debug\_09_CodeFirst.Migrations.AddProduct.resources
 D:\Шаг\Dot.Net\09_CodeFirst\obj\Debug\_09_CodeFirst.Migrations.AddCount.resources
 D:\Шаг\Dot.Net\09_CodeFirst\obj\Debug\_09_CodeFirst.Migrations.New.resources
+I:\Paniuk\09_CodeFirst\bin\Debug\09_CodeFirst.exe.config
+I:\Paniuk\09_CodeFirst\bin\Debug\09_CodeFirst.exe
+I:\Paniuk\09_CodeFirst\bin\Debug\09_CodeFirst.pdb
+I:\Paniuk\09_CodeFirst\bin\Debug\EntityFramework.dll
+I:\Paniuk\09_CodeFirst\bin\Debug\EntityFramework.SqlServer.dll
+I:\Paniuk\09_CodeFirst\bin\Debug\EntityFramework.xml
+I:\Paniuk\09_CodeFirst\bin\Debug\EntityFramework.SqlServer.xml
+I:\Paniuk\09_CodeFirst\obj\Debug\09_CodeFirst.csprojAssemblyReference.cache
+I:\Paniuk\09_CodeFirst\obj\Debug\09_CodeFirst.csproj.CoreCompileInputs.cache
+I:\Paniuk\09_CodeFirst\obj\Debug\09_CodeFirst.csproj.CopyComplete
+I:\Paniuk\09_CodeFirst\obj\Debug\09_CodeFirst.exe
+I:\Paniuk\09_CodeFirst\obj\Debug\09_CodeFirst.pdb
+I:\Paniuk\09_CodeFirst\obj\Debug\_09_CodeFirst.Migrations.AddDb.resources
+I:\Paniuk\09_CodeFirst\obj\Debug\09_CodeFirst.csproj.GenerateResource.cache

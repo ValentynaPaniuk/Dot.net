@@ -7,13 +7,13 @@ namespace _09_CodeFirst.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AddCount : IMigrationMetadata
+    public sealed partial class AddDb : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddCount));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddDb));
         
         string IMigrationMetadata.Id
         {
-            get { return "202009030533446_AddCount"; }
+            get { return "202009031133463_AddDb"; }
         }
         
         string IMigrationMetadata.Source

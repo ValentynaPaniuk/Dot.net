@@ -18,15 +18,12 @@ namespace _09_CodeFirst.Entities
         public virtual Manufacture Manufacture { get; set; }
         public virtual Address Address { get; set; }
 
-        public virtual Order Order { get; set; }
-
-
-        public virtual ICollection<Order> Orders { get; set; }
-
+        public virtual ICollection< Order> Orders { get; set; }
         public Product()
         {
-            Orders = new List<Order>();
-
+            Order order = new Order();
         }
+
+
     }
 }

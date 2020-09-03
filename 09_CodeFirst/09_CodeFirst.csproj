@@ -60,25 +60,9 @@
     <Compile Include="Entities\Manufacture.cs" />
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\Product.cs" />
-    <Compile Include="Migrations\202009021300596_Add Db.cs" />
-    <Compile Include="Migrations\202009021300596_Add Db.designer.cs">
-      <DependentUpon>202009021300596_Add Db.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009021335469_IntBuilding.cs" />
-    <Compile Include="Migrations\202009021335469_IntBuilding.designer.cs">
-      <DependentUpon>202009021335469_IntBuilding.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009030520100_AddProduct.cs" />
-    <Compile Include="Migrations\202009030520100_AddProduct.designer.cs">
-      <DependentUpon>202009030520100_AddProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009030533446_AddCount.cs" />
-    <Compile Include="Migrations\202009030533446_AddCount.designer.cs">
-      <DependentUpon>202009030533446_AddCount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009030739118_New.cs" />
-    <Compile Include="Migrations\202009030739118_New.designer.cs">
-      <DependentUpon>202009030739118_New.cs</DependentUpon>
+    <Compile Include="Migrations\202009031133463_AddDb.cs" />
+    <Compile Include="Migrations\202009031133463_AddDb.designer.cs">
+      <DependentUpon>202009031133463_AddDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -89,20 +73,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009021300596_Add Db.resx">
-      <DependentUpon>202009021300596_Add Db.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009021335469_IntBuilding.resx">
-      <DependentUpon>202009021335469_IntBuilding.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009030520100_AddProduct.resx">
-      <DependentUpon>202009030520100_AddProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009030533446_AddCount.resx">
-      <DependentUpon>202009030533446_AddCount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009030739118_New.resx">
-      <DependentUpon>202009030739118_New.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009031133463_AddDb.resx">
+      <DependentUpon>202009031133463_AddDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
