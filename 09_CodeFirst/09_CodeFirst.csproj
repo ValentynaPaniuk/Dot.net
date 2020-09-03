@@ -76,9 +76,9 @@
     <Compile Include="Migrations\202009030533446_AddCount.designer.cs">
       <DependentUpon>202009030533446_AddCount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009030652214_Change Product.cs" />
-    <Compile Include="Migrations\202009030652214_Change Product.designer.cs">
-      <DependentUpon>202009030652214_Change Product.cs</DependentUpon>
+    <Compile Include="Migrations\202009030739118_New.cs" />
+    <Compile Include="Migrations\202009030739118_New.designer.cs">
+      <DependentUpon>202009030739118_New.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -101,8 +101,8 @@
     <EmbeddedResource Include="Migrations\202009030533446_AddCount.resx">
       <DependentUpon>202009030533446_AddCount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009030652214_Change Product.resx">
-      <DependentUpon>202009030652214_Change Product.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009030739118_New.resx">
+      <DependentUpon>202009030739118_New.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

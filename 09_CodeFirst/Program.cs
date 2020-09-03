@@ -27,18 +27,29 @@ namespace _09_CodeFirst
             //Add new product
             Address _AudiAG = new Address { Country = "Germany", City = "Ingolstadt", Street = "Godstreet", Builder = 1 };
             Address _Sony = new Address { Country = "USA", City = "California", Street = "GoldStreet", Builder = 5 };
+            context.Addresses.Add(_AudiAG);
+            context.Addresses.Add(_Sony);
+            context.SaveChanges();
+
 
             Category auto = new Category { NameCategory = "Car" };
             Category comp = new Category { NameCategory = "Computer and Audi" };
+            context.Categories.Add(auto);
+            context.Categories.Add(comp);
+            context.SaveChanges();
+
 
 
             Manufacture manufacture_Germany = new Manufacture { NameManufacture = "Audi AG", Address=_AudiAG };
             Manufacture manufacture_USA = new Manufacture { NameManufacture = "Sony"};
+            //context.Manufactures.Add(manufacture_Germany);
+            //context.Manufactures.Add(manufacture_USA);
+            //context.SaveChanges();
 
-            //Product product = new Product { NameProduct = "Audi", Price = 30000, Category = auto, IsLegal = true, Manufacture = manufacture_Germany };
-            Product product = new Product { NameProduct = "Leptop", Price = 12000, Category = comp, IsLegal = false, Manufacture = manufacture_USA };
+            Product product = new Product { NameProduct = "Audi", Price = 30000, Category = auto, IsLegal = true, Manufacture = manufacture_Germany };
+            //Product product = new Product { NameProduct = "Leptop", Price = 12000, Category = comp, IsLegal = false, Manufacture = manufacture_USA };
 
-           // context.Products.Add(product);
+            //context.Products.Add(product);
             //context.SaveChanges();
             PrintProducts(context.Products.ToList());
 
@@ -52,21 +63,23 @@ namespace _09_CodeFirst
             };
             //context.Clients.AddRange(clients);
             //context.SaveChanges();
-            //PrintClients(context.Clients.ToList());
+            PrintClients(context.Clients.ToList());
 
-            //Address address_cl1 = new Address { Country = "Ukraine", City = "Rivne", Street = "Soborna", Builder = 202 };
-            Address address_cl1 = new Address { Country = "Ukraine", City = "Kyiv", Street = "Nezalejnosti", Builder = 15 };
+            Address address_cl1 = new Address { Country = "Ukraine", City = "Rivne", Street = "Soborna", Builder = 202 };
+            //Address address_cl1 = new Address { Country = "Ukraine", City = "Kyiv", Street = "Nezalejnosti", Builder = 15 };
+            //context.Addresses.Add(address_cl1);
+            //context.SaveChanges();
 
-            Order order = new Order { Date= new DateTime(2008, 3, 15), Client= context.Clients.FirstOrDefault(x => x.NameClient.Equals("Ivan Petrov")), Address=address_cl1, Product=context.Products.FirstOrDefault(x=>x.NameProduct.Equals("Leptop")), Count =3 };
-            //Order order = new Order { Date= new DateTime(2020, 3, 15), Client= context.Clients.FirstOrDefault(x => x.NameClient.Equals("Olga Kolosova")), Address=address_cl1, Product=context.Products.FirstOrDefault(x=>x.NameProduct.Equals("Audi")), Count =1 };
+            //Order order = new Order { Date= new DateTime(2008, 3, 15), Client= context.Clients.FirstOrDefault(x => x.NameClient.Equals("Ivan Petrov")), Address=context.Addresses.FirstOrDefault(x=>x.City.Equals("Ukraine") && x.City=="Rivne"), Product=context.Products.FirstOrDefault(x=>x.NameProduct.Equals("Leptop")), Count =3 };
+            Order order = new Order { Date= new DateTime(2020, 3, 15), Client= context.Clients.FirstOrDefault(x => x.NameClient.Equals("Olga Kolosova")), Address = context.Addresses.FirstOrDefault(x => x.City.Equals("Ukraine") && x.City == "Rivne"), Product=context.Products.FirstOrDefault(x=>x.NameProduct.Equals("Audi")), Count =1 };
             //Order order = new Order { Date= new DateTime(2018, 2, 22), Client= context.Clients.FirstOrDefault(x => x.NameClient.Equals("Sergiy Kozliuk")), Address=address_cl1, Product=context.Products.FirstOrDefault(x=>x.NameProduct.Equals("Leptop")), Count =1 };
-            //context.Orders.Add(order);
+           context.Orders.Add(order);
             //context.SaveChanges();
-           // order.TotalPrice = order.Count * order.Product.Price;
-            //context.Orders.Add(order);
-            //context.SaveChanges();
+           order.TotalPrice = order.Count * order.Product.Price;
+           context.Orders.Add(order);
+           context.SaveChanges();
 
-           // PrintOrders(context.Orders.ToList());
+            //PrintOrders(context.Orders.ToList());
 
         }
 

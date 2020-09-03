@@ -15,11 +15,9 @@ namespace _09_CodeFirst.Entities
 
         //Navigation prop
 
-       
         public virtual Client Client { get; set; }
         public virtual Address Address { get; set; }
         public virtual Product Product { get; set; }
-
 
     }
 }
