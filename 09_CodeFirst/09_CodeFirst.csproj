@@ -76,13 +76,9 @@
     <Compile Include="Migrations\202009030533446_AddCount.designer.cs">
       <DependentUpon>202009030533446_AddCount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009030556079_TotalPriceNull.cs" />
-    <Compile Include="Migrations\202009030556079_TotalPriceNull.designer.cs">
-      <DependentUpon>202009030556079_TotalPriceNull.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009030557242_TotalPriceNotNull.cs" />
-    <Compile Include="Migrations\202009030557242_TotalPriceNotNull.designer.cs">
-      <DependentUpon>202009030557242_TotalPriceNotNull.cs</DependentUpon>
+    <Compile Include="Migrations\202009030652214_Change Product.cs" />
+    <Compile Include="Migrations\202009030652214_Change Product.designer.cs">
+      <DependentUpon>202009030652214_Change Product.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -105,11 +101,8 @@
     <EmbeddedResource Include="Migrations\202009030533446_AddCount.resx">
       <DependentUpon>202009030533446_AddCount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009030556079_TotalPriceNull.resx">
-      <DependentUpon>202009030556079_TotalPriceNull.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009030557242_TotalPriceNotNull.resx">
-      <DependentUpon>202009030557242_TotalPriceNotNull.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009030652214_Change Product.resx">
+      <DependentUpon>202009030652214_Change Product.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

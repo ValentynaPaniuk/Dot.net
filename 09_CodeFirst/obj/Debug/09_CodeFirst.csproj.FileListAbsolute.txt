@@ -15,5 +15,4 @@ D:\Шаг\Dot.Net\09_CodeFirst\obj\Debug\09_CodeFirst.csproj.GenerateResource.ca
 D:\Шаг\Dot.Net\09_CodeFirst\obj\Debug\_09_CodeFirst.Migrations.IntBuilding.resources
 D:\Шаг\Dot.Net\09_CodeFirst\obj\Debug\_09_CodeFirst.Migrations.AddProduct.resources
 D:\Шаг\Dot.Net\09_CodeFirst\obj\Debug\_09_CodeFirst.Migrations.AddCount.resources
-D:\Шаг\Dot.Net\09_CodeFirst\obj\Debug\_09_CodeFirst.Migrations.TotalPriceNull.resources
-D:\Шаг\Dot.Net\09_CodeFirst\obj\Debug\_09_CodeFirst.Migrations.TotalPriceNotNull.resources
+D:\Шаг\Dot.Net\09_CodeFirst\obj\Debug\_09_CodeFirst.Migrations.ChangeProduct.resources

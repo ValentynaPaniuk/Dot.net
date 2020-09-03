@@ -7,13 +7,13 @@ namespace _09_CodeFirst.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class TotalPriceNull : IMigrationMetadata
+    public sealed partial class ChangeProduct : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(TotalPriceNull));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeProduct));
         
         string IMigrationMetadata.Id
         {
-            get { return "202009030556079_TotalPriceNull"; }
+            get { return "202009030652214_Change Product"; }
         }
         
         string IMigrationMetadata.Source

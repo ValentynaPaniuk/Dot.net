@@ -52,7 +52,7 @@ namespace _09_CodeFirst
             };
             //context.Clients.AddRange(clients);
             //context.SaveChanges();
-            PrintClients(context.Clients.ToList());
+            //PrintClients(context.Clients.ToList());
 
             //Address address_cl1 = new Address { Country = "Ukraine", City = "Rivne", Street = "Soborna", Builder = 202 };
             Address address_cl1 = new Address { Country = "Ukraine", City = "Kyiv", Street = "Nezalejnosti", Builder = 15 };
@@ -62,9 +62,9 @@ namespace _09_CodeFirst
             //Order order = new Order { Date= new DateTime(2018, 2, 22), Client= context.Clients.FirstOrDefault(x => x.NameClient.Equals("Sergiy Kozliuk")), Address=address_cl1, Product=context.Products.FirstOrDefault(x=>x.NameProduct.Equals("Leptop")), Count =1 };
             //context.Orders.Add(order);
             //context.SaveChanges();
-            order.TotalPrice = order.Count * order.Product.Price;
-            context.Orders.Add(order);
-            context.SaveChanges();
+           // order.TotalPrice = order.Count * order.Product.Price;
+            //context.Orders.Add(order);
+            //context.SaveChanges();
 
            // PrintOrders(context.Orders.ToList());
 
