@@ -1,0 +1,12 @@
+D:\Шаг\Dot.Net\10_CodeFirst_\bin\Debug\10_CodeFirst_.exe.config
+D:\Шаг\Dot.Net\10_CodeFirst_\bin\Debug\10_CodeFirst_.exe
+D:\Шаг\Dot.Net\10_CodeFirst_\bin\Debug\10_CodeFirst_.pdb
+D:\Шаг\Dot.Net\10_CodeFirst_\bin\Debug\EntityFramework.dll
+D:\Шаг\Dot.Net\10_CodeFirst_\bin\Debug\EntityFramework.SqlServer.dll
+D:\Шаг\Dot.Net\10_CodeFirst_\bin\Debug\EntityFramework.xml
+D:\Шаг\Dot.Net\10_CodeFirst_\bin\Debug\EntityFramework.SqlServer.xml
+D:\Шаг\Dot.Net\10_CodeFirst_\bin\Debug\ru\EntityFramework.resources.dll
+D:\Шаг\Dot.Net\10_CodeFirst_\obj\Debug\10_CodeFirst_.csproj.CoreCompileInputs.cache
+D:\Шаг\Dot.Net\10_CodeFirst_\obj\Debug\10_CodeFirst_.csproj.CopyComplete
+D:\Шаг\Dot.Net\10_CodeFirst_\obj\Debug\10_CodeFirst_.exe
+D:\Шаг\Dot.Net\10_CodeFirst_\obj\Debug\10_CodeFirst_.pdb
