@@ -1,0 +1,13 @@
+D:\Шаг\Dot.Net\ShopLibrary.BLL\bin\Debug\ShopLibrary.BLL.dll
+D:\Шаг\Dot.Net\ShopLibrary.BLL\bin\Debug\ShopLibrary.BLL.pdb
+D:\Шаг\Dot.Net\ShopLibrary.BLL\bin\Debug\ShopLibrary.DAL.dll
+D:\Шаг\Dot.Net\ShopLibrary.BLL\bin\Debug\EntityFramework.dll
+D:\Шаг\Dot.Net\ShopLibrary.BLL\bin\Debug\ShopLibrary.DAL.pdb
+D:\Шаг\Dot.Net\ShopLibrary.BLL\bin\Debug\ShopLibrary.DAL.dll.config
+D:\Шаг\Dot.Net\ShopLibrary.BLL\bin\Debug\EntityFramework.xml
+D:\Шаг\Dot.Net\ShopLibrary.BLL\bin\Debug\ru\EntityFramework.resources.dll
+D:\Шаг\Dot.Net\ShopLibrary.BLL\obj\Debug\ShopLibrary.BLL.csprojAssemblyReference.cache
+D:\Шаг\Dot.Net\ShopLibrary.BLL\obj\Debug\ShopLibrary.BLL.csproj.CoreCompileInputs.cache
+D:\Шаг\Dot.Net\ShopLibrary.BLL\obj\Debug\ShopLibrary.BLL.csproj.CopyComplete
+D:\Шаг\Dot.Net\ShopLibrary.BLL\obj\Debug\ShopLibrary.BLL.dll
+D:\Шаг\Dot.Net\ShopLibrary.BLL\obj\Debug\ShopLibrary.BLL.pdb

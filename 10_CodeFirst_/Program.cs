@@ -8,7 +8,7 @@ namespace _10_CodeFirst_
 {
     //Створюємо папку Entities
     //Додаємо туди класи
-    //Інсталюємо EF, або створюємо клас ApplicationContext і обираємо Порожня модель CodeFirst
+    //Інсталюємо EF, або створюємо модель Ado.NET ApplicationContext і обираємо Порожня модель CodeFirst
     //Додаємо туди DbSet
     //Створюємо клас ShopInitializer : DropCreateDatabaseAlways<ApplicationContext> 
     //Прописуємо override метод Seed() і заповнюємо таблиці даними
