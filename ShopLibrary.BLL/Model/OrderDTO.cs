@@ -19,12 +19,10 @@ namespace ShopLibrary.BLL.Model
 
 
         public string Client { get; set; }
-
         public string Address { get; set; }
 
-        public virtual ICollection<string> Products { get; set; } = new List<string>();
-
-      
+        //public ICollection<string> Products { get; set; } = new List<string>();
+            
 
 
 

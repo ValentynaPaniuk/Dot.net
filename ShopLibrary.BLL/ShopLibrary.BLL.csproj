@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\ShopLibrary.DAL\packages\AutoMapper.10.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,16 +44,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\AddressDTO.cs" />
+    <Compile Include="Model\CategoryDTO.cs" />
+    <Compile Include="Model\ClientDTO.cs" />
+    <Compile Include="Model\ManufactureDTO.cs" />
     <Compile Include="Model\OrderDTO.cs" />
+    <Compile Include="Model\ProductDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IShopService.cs" />
     <Compile Include="Services\ShopService.cs" />
+    <Compile Include="Utils\MapperConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShopLibrary.DAL\ShopLibrary.DAL.csproj">
       <Project>{1DCC8CD3-E39B-4738-9B28-61C7EFC49BF5}</Project>
       <Name>ShopLibrary.DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

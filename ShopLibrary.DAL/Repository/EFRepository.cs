@@ -9,15 +9,17 @@ namespace ShopLibrary.DAL.Repository
 {
     public class EFRepository <TEntity> : IGenericRepository <TEntity> where TEntity : class //Обмеження на тип
     {
-        public readonly DbContext context;
+        private readonly DbContext context;
         private readonly DbSet<TEntity> set;
 
-   
+      
+       
 
 
-        public EFRepository()
+
+        public EFRepository(DbContext _context)
         {
-            context = new ApplicationContext();
+            context = _context;
             set = context.Set<TEntity>();
         }
 

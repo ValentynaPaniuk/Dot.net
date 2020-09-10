@@ -1,6 +1,14 @@
-﻿using ShopLibrary.BLL.Services;
+﻿using Autofac;
+using ShopLibrary.BLL.Model;
+using ShopLibrary.BLL.Services;
+using ShopLibrary.DAL;
+using ShopLibrary.DAL.Entities;
+using ShopLibrary.DAL.Repository;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +21,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace ShopLibrary.Client
 {
@@ -60,20 +69,71 @@ namespace ShopLibrary.Client
     //23. Створити поле private readonly IShopService service і в конструкторі зробити -  service = new ShopService();
     //24. Прив'язати DataContext в конструкторі -  this.DataContext = service.GetOrders().ToList();
 
-    //25. Копіюємо StringConnrction з App.config (classLibrary.DAL) в App.config (ShopLibrary.Client)
+    //25. Копіюємо StringConnection з App.config (classLibrary.DAL) в App.config (ShopLibrary.Client)
+    //26. Install Entity Framework
 
-
-
-
+    //===========================DAL================================
+    //27. Створюємо папку Model і в ній клас BookDTO(для переміщення об'єктів між БД і IU)
+    //28. Редагуємо IShopService (колекція IEnumerable<BookDTO> GetOrders() буде вертати BookDTO)
+    //29. Редагуємо метод GetOrders() в BookServise теж редагуємо - вертає BookDTO
+    //      public IEnumerable<OrderDTO> GetOrders()
+    //      {
+    //          return repo.GetAll();
+    //      }
+    //      
 
     public partial class MainWindow : Window
     {
         private readonly IShopService service;
-        public MainWindow()
+
+        public ObservableCollection<OrderDTO> Orders { get; set; } = new ObservableCollection<OrderDTO>();
+
+        public MainWindow(IShopService shopService)
         {
             InitializeComponent();
-            service = new ShopService();
-            this.DataContext = service.GetOrders().ToList();
+            service = shopService;
+            UpdateOrders(shopService);
+            this.DataContext = Orders;
+
+            
+
+        }
+
+        private void UpdateOrders(IShopService shopService)
+        {
+            Orders.Clear();
+            var temp = shopService.GetOrders();
+            foreach (var item in temp)
+            {
+                Orders.Add(item);
+            }
+        }
+
+        private void Click_Add(object sender, RoutedEventArgs e)
+        {
+
+            OrderWindow orderWindow = new OrderWindow(new OrderDTO(), true);
+            if (orderWindow.ShowDialog() == true)
+                     
+            UpdateOrders(service);
+
+        }
+
+        private void Click_Delete(object sender, RoutedEventArgs e)
+        {
+            if (dg.SelectedIndex == -1)
+                return;
+
+        }
+
+        private void Click_Update(object sender, RoutedEventArgs e)
+        {
+            Orders.Clear();
+            var temp = service.GetOrders();
+            foreach (var item in temp)
+            {
+                Orders.Add(item);
+            }
         }
     }
 }

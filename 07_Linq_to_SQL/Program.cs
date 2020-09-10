@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,17 +12,46 @@ namespace _07_Linq_to_SQL
     {
         static void Main(string[] args)
         {
+            string connectionString = ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString;
+
+            DataClasses1DataContext context = new DataClasses1DataContext(connectionString);
+
             //Інсталюємо LINQ to SQL tools через Installer VS
 
             // 1.Вибрати всі книги, кількість сторінок в яких більше 100
+            var books = context.Books.Where(x => x.Pages > 100);
+            
+            ReadBooks(books);
             // 2.Вибрати всі книги, ім'я яких починається на літеру 'А' або 'а
+            var books1 = context.Books.Where(x => x.Name.ToLower().StartsWith("a"));
+            ReadBooks(books1);
             // 3.Вибрати всі книги автора William Shakespeare
+            var books2 = context.Books.Where(x => x.Author.Name == "R.S.Martin");
+            ReadBooks(books2);
+
             // 4.Вибрати всі книги українських авторів
+
             // 5.Вибрати всі книги, ім'я в яких складається менше ніж з 10-ти символів
+            var books3 = context.Books.Where(x => x.Name.Length < 10);
+            ReadBooks(books3);
+
             // 6.Вибрати книгу з максимальною кількістю сторінок не американського автор
+            var books4 = context.Books.Where(x => x.Pages == (context.Books.Select(y => y.Pages)).Max());
+            ReadBooks(books4);
+
             // 7.Вибрати автора, який має найменше книг в базі даних
+            var books5 = context.Authors.Where(x => x.Books.Count == (context.Authors.Select(y => y.Books.Count)).Min());
+            ReadAuthors(books5);
+
             // 8.Вибрати імена всіх авторів, крім американських, розташованих в алфавітном порядку
+            var books6 = context.Authors.OrderBy(x => x.Name);
+            ReadAuthors(books6);
+
             // 9.Вибрати країну, авторів якої є найбільше в базі
+           
+            //=======================================================
+            //=======================================================
+
 
 
             int[] values1 = new int[5] { 1, 10, 5, 13, 4 };
@@ -137,12 +168,20 @@ namespace _07_Linq_to_SQL
 
             //8) Проверить, содержит ли категория Car товары, с ценой от 1000 до 2000 грн.
             Console.WriteLine($"3.8 Check if the Car category contains goods priced from 1000 to 2000 UAH.");
+            ReadGoods(goods.Where(x => x.Category == "Car" && (x.Price >= 1000 && x.Price <= 2000)));
 
             //9) Посчитать суммарное количество товаров категорий Сar и Mobile.
             Console.WriteLine($"3.9 The total number of goods in the Сar and Mobile categories. ");
-
+            Console.WriteLine(goods.Where(x => x.Category == "Car" || x.Category == "Mobile").Count());
             //10) Вывести список категорий и количество товаров каждой категории.
             Console.WriteLine($"3.10 ");
+            var categories = goods.Select(x => x.Category).Distinct();
+
+            foreach (var item in categories)
+            {
+                Console.WriteLine($"{item} = {goods.Where(x => x.Category == item).Count()}");
+            }
+
         }
 
         class Good
@@ -158,7 +197,33 @@ namespace _07_Linq_to_SQL
             }
         }
 
+        private static void ReadGoods(IEnumerable goods)
+        {
+            foreach (var item in goods)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        private static void ReadBooks(IQueryable<Book> books)
+        {
+            foreach (var item in books)
+            {
+                Console.WriteLine($"{item.Id} | {item.Name} | {item.Desc} | {item.Year} | {item.Pages} | {item.Author.Name} | {item.Genre.Name}");
+            }
+        }
+
+        private static void ReadAuthors(IQueryable<Author> books)
+        {
+            foreach (var item in books)
+            {
+                Console.WriteLine($"{item.Id} | {item.Name} ");
+            }
+        }
+
     }
+
+
 }
 
 
