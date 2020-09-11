@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0A365CEC-7572-45F4-8011-0839CDC6D938}</ProjectGuid>
+    <ProjectGuid>{143EC545-B69E-410C-8105-C0BCBF481FE6}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_07_Linq_to_SQL</RootNamespace>
-    <AssemblyName>07_Linq_to_SQL</AssemblyName>
+    <RootNamespace>Examination_20200910</RootNamespace>
+    <AssemblyName>Examination_20200910</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,7 +34,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
