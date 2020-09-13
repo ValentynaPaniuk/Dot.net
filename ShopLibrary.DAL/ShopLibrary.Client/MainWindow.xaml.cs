@@ -94,8 +94,7 @@ namespace ShopLibrary.Client
             service = shopService;
             UpdateOrders(shopService);
             this.DataContext = Orders;
-
-            
+           
 
         }
 
@@ -112,7 +111,8 @@ namespace ShopLibrary.Client
         private void Click_Add(object sender, RoutedEventArgs e)
         {
 
-            OrderWindow orderWindow = new OrderWindow(new OrderDTO(), true);
+            OrderWindow orderWindow = new OrderWindow(new OrderDTO(), true, service);
+            orderWindow.Owner = this;
             if (orderWindow.ShowDialog() == true)
                      
             UpdateOrders(service);
@@ -124,16 +124,21 @@ namespace ShopLibrary.Client
             if (dg.SelectedIndex == -1)
                 return;
 
+            int studentId = (dg.Items[dg.SelectedIndex] as OrderDTO).Id;
+            foreach (var item in Orders)
+            {
+                if (item.Id == studentId)
+                {
+                    service.DeleteOrder(item);
+                }
+            }
+            MessageBox.Show("You deleted order");
+            UpdateOrders(service);
         }
 
         private void Click_Update(object sender, RoutedEventArgs e)
         {
-            Orders.Clear();
-            var temp = service.GetOrders();
-            foreach (var item in temp)
-            {
-                Orders.Add(item);
-            }
+            UpdateOrders(service);
         }
     }
 }

@@ -23,8 +23,8 @@ namespace ShopLibrary.BLL.Model
 
         //Navigation prop
 
-        public virtual ICollection<string> Manufactures { get; set; }
-        public virtual ICollection<string> Orders { get; set; }
+       // public  ICollection<ManufactureDTO> Manufactures { get; set; }
+       //public  ICollection<OrderDTO> Orders { get; set; }
 
        
     }

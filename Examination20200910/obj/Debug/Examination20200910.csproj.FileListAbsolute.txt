@@ -1,0 +1,7 @@
+D:\Шаг\Dot.Net\Examination20200910\bin\Debug\Examination20200910.exe.config
+D:\Шаг\Dot.Net\Examination20200910\bin\Debug\Examination20200910.exe
+D:\Шаг\Dot.Net\Examination20200910\bin\Debug\Examination20200910.pdb
+D:\Шаг\Dot.Net\Examination20200910\obj\Debug\Examination20200910.csprojAssemblyReference.cache
+D:\Шаг\Dot.Net\Examination20200910\obj\Debug\Examination20200910.csproj.CoreCompileInputs.cache
+D:\Шаг\Dot.Net\Examination20200910\obj\Debug\Examination20200910.exe
+D:\Шаг\Dot.Net\Examination20200910\obj\Debug\Examination20200910.pdb

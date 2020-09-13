@@ -55,6 +55,14 @@ namespace ShopLibrary.BLL.Services
             repoOrder.Create(addOrder);
         }
 
+        public void DeleteOrder(OrderDTO orderDTO)
+        {
+            var deleteOrder= mapper.Map<Order>(orderDTO);
+            var del = repoOrder.GetAll().FirstOrDefault(x => x.Id == deleteOrder.Id);
+           
+            repoOrder.Delete(del);
+        }
+
         public IEnumerable<OrderDTO> GetOrders()
         {
             var orders = repoOrder.GetAll();
@@ -78,12 +86,27 @@ namespace ShopLibrary.BLL.Services
             return model;
         }
 
+        public ICollection<ClientDTO> GetClients()
+        {
+            var clients = repoClient.GetAll();
+            var model = mapper.Map<ICollection<ClientDTO>>(clients);
+            return model.ToList();
+        }
+
+        public ICollection<Address> GetAddresses()
+        {
+            var adresses = repoAddress.GetAll();
+            //var model = mapper.Map<ICollection<Address>, ICollection<AddressDTO>>(adresses.ToList());
+            return adresses.ToList();
+        }
+
+        
 
 
         ICollection<ProductDTO> GetDetailsAboutOrder(int OrderID)
         {
             //var model = new List<ProductDTO>();
-            var order = repoOrder.GetAll().FirstOrDefault(x => x.Id == OrderID);
+            var order = repoProduct.GetAll().FirstOrDefault(x => x.Id == OrderID);
 
             //foreach (var item in order.Products)
             //{
@@ -96,13 +119,13 @@ namespace ShopLibrary.BLL.Services
             //        Category = item.Category.NameCategory,
             //        Manufacture = item.Manufacture.NameManufacture,
             //        Address = item.Address.Country,
-
-
             //    });
             //}
             var model = mapper.Map<ICollection<ProductDTO>>(order);
             return model;
         }
+
+
 
     }
 }

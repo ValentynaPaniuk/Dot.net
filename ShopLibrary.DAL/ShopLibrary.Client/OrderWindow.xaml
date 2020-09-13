@@ -18,9 +18,9 @@
         <StackPanel Grid.Row="1">
             <TextBox Name="tb_Date" Width="200" Height="40" Margin="10" Background="Aqua"/>
             <TextBox Name="tb_Count" Width="200" Height="40" Margin="10" Background="Aqua"/>
-            <ComboBox Name="cb_Client" Width="200" Height="40" Margin="10" Background="Aqua"/>
-            <ComboBox Name="cb_Address" Width="200" Height="40" Margin="10" Background="Aqua"/>
-            <ComboBox Name="cb_Product" Width="200" Height="40" Margin="10" Background="Aqua"/>
+            <ComboBox Name="cb_Client" DisplayMemberPath="NameClient"  Width="200" Height="40" Margin="10" Background="Aqua"/>
+            <ComboBox Name="cb_Address" DisplayMemberPath="Country" Width="200" Height="40" Margin="10" Background="Aqua"/>
+            <ComboBox Name="cb_Product" DisplayMemberPath="NameProduct" Width="200" Height="40" Margin="10" Background="Aqua"/>
         </StackPanel>
         <StackPanel Grid.Row="2">
             <Button Content="Add Order" Name="bt_Add" Width="200" Height="40" Margin="10" Background="Aqua" Click="Bt_Add_Click"/>

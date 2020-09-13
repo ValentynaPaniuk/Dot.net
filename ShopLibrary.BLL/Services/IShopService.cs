@@ -11,6 +11,11 @@ namespace ShopLibrary.BLL.Services
     public interface IShopService
     {
         IEnumerable<OrderDTO> GetOrders();
+        ICollection<ClientDTO> GetClients();
+        ICollection<Address> GetAddresses();
+
+
         void AddOrder(OrderDTO orderDTO);
+        void DeleteOrder(OrderDTO orderDTO);
     }
 }

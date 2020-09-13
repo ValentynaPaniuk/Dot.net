@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Shop_First_Initializer" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Shop_First_Initializer;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="Examination20200910.Properties.Settings" SettingsPropertyName="Shop_First_InitializerConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Addresses" Member="Addresses">
+    <Type Name="Addresses">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Street" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Builder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Addresses_Manufactures" Member="Manufactures" ThisKey="Id" OtherKey="Address_Id" Type="Manufactures" />
+      <Association Name="Addresses_Orders" Member="Orders" ThisKey="Id" OtherKey="Address_Id" Type="Orders" />
+      <Association Name="Addresses_Products" Member="Products" ThisKey="Id" OtherKey="Address_Id" Type="Products" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Categories" Member="Categories">
+    <Type Name="Categories">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameCategory" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Categories_Products" Member="Products" ThisKey="Id" OtherKey="Category_Id" Type="Products" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Clients" Member="Clients">
+    <Type Name="Clients">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameClient" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Clients_Orders" Member="Orders" ThisKey="Id" OtherKey="Client_Id" Type="Orders" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Manufactures" Member="Manufactures">
+    <Type Name="Manufactures">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameManufacture" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Address_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Manufactures_Products" Member="Products" ThisKey="Id" OtherKey="Manufacture_Id" Type="Products" />
+      <Association Name="Addresses_Manufactures" Member="Addresses" ThisKey="Address_Id" OtherKey="Id" Type="Addresses" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderProducts" Member="OrderProducts">
+    <Type Name="OrderProducts">
+      <Column Name="Order_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Product_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Orders_OrderProducts" Member="Orders" ThisKey="Order_Id" OtherKey="Id" Type="Orders" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Products_OrderProducts" Member="Products" ThisKey="Product_Id" OtherKey="Id" Type="Products" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Orders" Member="Orders">
+    <Type Name="Orders">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TotalPrice" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Address_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Client_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Orders_OrderProducts" Member="OrderProducts" ThisKey="Id" OtherKey="Order_Id" Type="OrderProducts" />
+      <Association Name="Addresses_Orders" Member="Addresses" ThisKey="Address_Id" OtherKey="Id" Type="Addresses" IsForeignKey="true" />
+      <Association Name="Clients_Orders" Member="Clients" ThisKey="Client_Id" OtherKey="Id" Type="Clients" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Products" Member="Products">
+    <Type Name="Products">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameProduct" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="IsLegal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Address_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Category_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Manufacture_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Products_OrderProducts" Member="OrderProducts" ThisKey="Id" OtherKey="Product_Id" Type="OrderProducts" />
+      <Association Name="Addresses_Products" Member="Addresses" ThisKey="Address_Id" OtherKey="Id" Type="Addresses" IsForeignKey="true" />
+      <Association Name="Categories_Products" Member="Categories" ThisKey="Category_Id" OtherKey="Id" Type="Categories" IsForeignKey="true" />
+      <Association Name="Manufactures_Products" Member="Manufactures" ThisKey="Manufacture_Id" OtherKey="Id" Type="Manufactures" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

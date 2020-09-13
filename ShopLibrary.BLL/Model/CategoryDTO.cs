@@ -14,7 +14,7 @@ namespace ShopLibrary.BLL.Model
         public string NameCategory { get; set; }
 
         
-        public virtual ICollection<string> Products { get; set; }
+      //  public virtual ICollection<string> Products { get; set; }
 
       
     }

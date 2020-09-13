@@ -1,4 +1,5 @@
 ﻿using ShopLibrary.BLL.Model;
+using ShopLibrary.BLL.Services;
 using ShopLibrary.DAL;
 using ShopLibrary.DAL.Entities;
 using System;
@@ -23,29 +24,36 @@ namespace ShopLibrary.Client
     /// </summary>
     public partial class OrderWindow : Window
     {
+        private readonly IShopService service;
 
-        List<AddressDTO> addressDTOs = new List<AddressDTO>(); //Список всіх адрес
+
+
+        List<Address> addressDTOs = new List<Address>(); //Список всіх адрес
         List<ClientDTO> clientDTOs = new List<ClientDTO>(); //Список всіх клієнтів
         List<ProductDTO> productDTOs = new List<ProductDTO>(); //Список всіх продуктів
-
-
 
 
         public OrderDTO OrderDTO { get; set; }
         bool addNew; //Перевірка чи додати чи видалити
 
-        public OrderWindow( OrderDTO orderDTO, bool addNew)
+        public OrderWindow( OrderDTO orderDTO, bool addNew, IShopService orderService)
         {
             InitializeComponent();
             this.addNew = addNew;
             this.OrderDTO = orderDTO;
+            this.service = orderService;
+            this.addressDTOs = service.GetAddresses().ToList();
+            this.clientDTOs = service.GetClients().ToList();
+            //this.productDTOs = service.ToList();
+
 
             cb_Client.ItemsSource = clientDTOs;
             cb_Address.ItemsSource = addressDTOs;
             cb_Product.ItemsSource = productDTOs;
 
-            ReadDataFromClients();
+           
 
+            //Якщо потрібно робити Update
             if (!addNew)
             {
                 tb_Date.Text = orderDTO.Date.ToString();
@@ -59,16 +67,7 @@ namespace ShopLibrary.Client
 
         }
 
-        private void ReadDataFromClients()
-        {
-            
-        }
-
-        private void ReadDataFromAddress()
-        {
-
-        }
-
+      
 
 
         private void Bt_Add_Click(object sender, RoutedEventArgs e)
@@ -78,31 +77,29 @@ namespace ShopLibrary.Client
                 OrderDTO = new OrderDTO();
 
             //Перевіряємо чи всі поля заповнені
-            if (String.IsNullOrWhiteSpace(tb_Date.Text) || String.IsNullOrWhiteSpace(tb_Count.Text) || cb_Client.SelectedIndex == -1 || cb_Address.SelectedIndex==-1 || cb_Product.SelectedIndex==-1)
+            if (String.IsNullOrWhiteSpace(tb_Date.Text) || String.IsNullOrWhiteSpace(tb_Count.Text) || cb_Client.SelectedIndex == -1 || cb_Address.SelectedIndex==-1 /*|| cb_Product.SelectedIndex==-1*/)
                 return;
-
-
 
             OrderDTO.Date = DateTime.Parse(tb_Date.Text);
             OrderDTO.Count =Int32.Parse(tb_Count.Text);
 
-            string address = cb_Address.SelectedItem.ToString();
-            string client = cb_Client.SelectedItem.ToString();
-            string product = cb_Product.SelectedItem.ToString();
+            string address = (cb_Address.SelectedValue as Address).Country;
+            string client = (cb_Client.SelectedValue as ClientDTO).NameClient;
+            //string product = cb_Product.SelectedItem.ToString();
 
             OrderDTO.Id = addressDTOs.Find(x => x.Country == address).Id;
-            OrderDTO.Id = productDTOs.Find(x => x.NameProduct == product).Id;
+            //OrderDTO.Id = productDTOs.Find(x => x.NameProduct == product).Id;
             OrderDTO.Id = clientDTOs.Find(x => x.NameClient == client).Id;
-           
+
 
             if (addNew)
                 AddOrder();
             else
-                UpdateOrder();
-
+                UpdateOrders(service);
+                    
             this.DialogResult = true;
 
-            //service.AddOrder(OrderDTO);
+            service.AddOrder(OrderDTO);
             
 
         }
@@ -119,11 +116,20 @@ namespace ShopLibrary.Client
                 Client = cb_Client.SelectedValue.ToString(),
                 
             };
+           
         }
 
-        private void UpdateOrder()
+        private void UpdateOrders(IShopService shopService)
         {
-            
+            var windowOrder = this.Owner as MainWindow;
+            windowOrder.Orders.Clear();
+            var temp = shopService.GetOrders();
+            foreach (var item in temp)
+            {
+               // Orders.Add(item);
+            }
         }
+
+
     }
 }

@@ -11,7 +11,7 @@ namespace ShopLibrary.BLL.Model
         
         public int Id { get; set; }
         public string NameManufacture { get; set; }
-        public virtual ICollection<string> Products { get; set; }
+       // public virtual ICollection<ProductDTO> Products { get; set; }
         public virtual string Address { get; set; }
     }
 }

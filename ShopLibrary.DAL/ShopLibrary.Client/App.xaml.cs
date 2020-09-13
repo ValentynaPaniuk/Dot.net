@@ -31,7 +31,7 @@ namespace ShopLibrary.Client
             builder.RegisterType<MainWindow>().AsSelf();
 
             var config = new MapperConfiguration(cgf => cgf.AddProfile(new MapperConfig()));
-            builder.RegisterInstance(config.CreateMapper());
+                builder.RegisterInstance(config.CreateMapper());
 
             using (var scope = builder.Build().BeginLifetimeScope())
             {
