@@ -7,7 +7,6 @@ D:\Шаг\Dot.Net\ShopLibrary.DAL\bin\Debug\EntityFramework.xml
 D:\Шаг\Dot.Net\ShopLibrary.DAL\bin\Debug\EntityFramework.SqlServer.xml
 D:\Шаг\Dot.Net\ShopLibrary.DAL\bin\Debug\ru\EntityFramework.resources.dll
 D:\Шаг\Dot.Net\ShopLibrary.DAL\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
-D:\Шаг\Dot.Net\ShopLibrary.DAL\obj\Debug\ShopLibrary.DAL.csprojAssemblyReference.cache
 D:\Шаг\Dot.Net\ShopLibrary.DAL\obj\Debug\ShopLibrary.DAL.csproj.CoreCompileInputs.cache
 D:\Шаг\Dot.Net\ShopLibrary.DAL\obj\Debug\ShopLibrary.DAL.csproj.CopyComplete
 D:\Шаг\Dot.Net\ShopLibrary.DAL\obj\Debug\ShopLibrary.DAL.dll

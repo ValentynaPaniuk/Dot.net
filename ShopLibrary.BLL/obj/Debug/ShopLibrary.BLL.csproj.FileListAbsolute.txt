@@ -1,8 +1,8 @@
+D:\Шаг\Dot.Net\ShopLibrary.BLL\bin\Debug\EntityFramework.dll
 D:\Шаг\Dot.Net\ShopLibrary.BLL\bin\Debug\ShopLibrary.BLL.dll
 D:\Шаг\Dot.Net\ShopLibrary.BLL\bin\Debug\ShopLibrary.BLL.pdb
 D:\Шаг\Dot.Net\ShopLibrary.BLL\bin\Debug\AutoMapper.dll
 D:\Шаг\Dot.Net\ShopLibrary.BLL\bin\Debug\ShopLibrary.DAL.dll
-D:\Шаг\Dot.Net\ShopLibrary.BLL\bin\Debug\EntityFramework.dll
 D:\Шаг\Dot.Net\ShopLibrary.BLL\bin\Debug\ShopLibrary.DAL.pdb
 D:\Шаг\Dot.Net\ShopLibrary.BLL\bin\Debug\ShopLibrary.DAL.dll.config
 D:\Шаг\Dot.Net\ShopLibrary.BLL\bin\Debug\AutoMapper.xml

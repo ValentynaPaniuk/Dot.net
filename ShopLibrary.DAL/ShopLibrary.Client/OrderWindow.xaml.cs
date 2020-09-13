@@ -77,24 +77,19 @@ namespace ShopLibrary.Client
                 OrderDTO = new OrderDTO();
 
             //Перевіряємо чи всі поля заповнені
-            if (String.IsNullOrWhiteSpace(tb_Date.Text) || String.IsNullOrWhiteSpace(tb_Count.Text) || cb_Client.SelectedIndex == -1 || cb_Address.SelectedIndex==-1 /*|| cb_Product.SelectedIndex==-1*/)
-                return;
-
-            OrderDTO.Date = DateTime.Parse(tb_Date.Text);
-            OrderDTO.Count =Int32.Parse(tb_Count.Text);
-
-            string address = (cb_Address.SelectedValue as Address).Country;
-            string client = (cb_Client.SelectedValue as ClientDTO).NameClient;
-            //string product = cb_Product.SelectedItem.ToString();
-
-            OrderDTO.Id = addressDTOs.Find(x => x.Country == address).Id;
-            //OrderDTO.Id = productDTOs.Find(x => x.NameProduct == product).Id;
-            OrderDTO.Id = clientDTOs.Find(x => x.NameClient == client).Id;
-
-
             if (addNew)
-                AddOrder();
-            else
+            {
+                if (String.IsNullOrWhiteSpace(tb_Date.Text) || String.IsNullOrWhiteSpace(tb_Count.Text) || cb_Client.SelectedIndex == -1 || cb_Address.SelectedIndex == -1 /*|| cb_Product.SelectedIndex==-1*/)
+                    return;
+
+                OrderDTO.Date = DateTime.Parse(tb_Date.Text);
+                OrderDTO.Count = Int32.Parse(tb_Count.Text);
+
+                OrderDTO.Address = (cb_Address.SelectedValue as Address).Country;
+                OrderDTO.Client = (cb_Client.SelectedValue as ClientDTO).NameClient;
+            }
+            // string product = (cb_Product.SelectedValue as ProductDTO).NameProduct;// cb_Product.SelectedItem.ToString();
+                 
                 UpdateOrders(service);
                     
             this.DialogResult = true;
@@ -105,19 +100,7 @@ namespace ShopLibrary.Client
         }
 
 
-        //Метод додавання студента
-        private void AddOrder()
-        {
-            OrderDTO orderDTO = new OrderDTO()
-            {
-                Date = DateTime.Parse(tb_Date.Text),
-                Count = Int32.Parse(tb_Count.Text),
-                Address = cb_Address.SelectedValue.ToString(),
-                Client = cb_Client.SelectedValue.ToString(),
-                
-            };
-           
-        }
+      
 
         private void UpdateOrders(IShopService shopService)
         {
@@ -126,7 +109,7 @@ namespace ShopLibrary.Client
             var temp = shopService.GetOrders();
             foreach (var item in temp)
             {
-               // Orders.Add(item);
+               //Orders.Add(item);
             }
         }
 
