@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -23,24 +24,24 @@ namespace _10_CodeFirst_Initializer_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        SqlConnection connection;
-              
+                     
 
         public MainWindow()
         {
             InitializeComponent();
-            ApplicationContext content = new ApplicationContext();
-            
+            ApplicationContext context = new ApplicationContext();
 
+            context.Clients.Load();
+            dgclients.ItemsSource = context.Clients.Local.ToBindingList();
+
+            context.Products.Load();
+            dgproduct.ItemsSource = context.Products.Local.ToBindingList();
+
+            context.Orders.Load();
+            dgorders.ItemsSource = context.Orders.Local.ToBindingList();
         }
 
-        private void AddTable_Click(object sender, RoutedEventArgs e)
-        {
-            SqlCommand sqlCommand = new SqlCommand("select name from sys.tables");
-                       
 
-
-
-        }
+       
     }
 }

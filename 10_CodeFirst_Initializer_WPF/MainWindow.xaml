@@ -7,15 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
+       
 
-        <TabControl Background="Green" Grid.Column="1" x:Name="tabControl"></TabControl>
-        <StackPanel Margin="10" Background="Aqua">
-            <Button Margin="20" Content="Add tables" Click="AddTable_Click"/>
-        </StackPanel>
+        <TabControl Background="Green" Grid.Column="1" x:Name="tabControl">
+            <TabItem Header="Products">
+                <DataGrid x:Name="dgproduct"></DataGrid>
+            </TabItem>
+            <TabItem Header="Orders">
+                <DataGrid x:Name="dgorders"></DataGrid>
+            </TabItem>
+            <TabItem Header="Clients">
+                <DataGrid x:Name="dgclients"></DataGrid>
+            </TabItem>
+        
+        </TabControl>
+        
 
     </Grid>
 </Window>
