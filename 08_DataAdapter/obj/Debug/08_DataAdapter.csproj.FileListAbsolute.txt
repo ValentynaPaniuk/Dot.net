@@ -1,0 +1,10 @@
+D:\Шаг\Dot.Net\08_DataAdapter\bin\Debug\08_DataAdapter.exe.config
+D:\Шаг\Dot.Net\08_DataAdapter\bin\Debug\08_DataAdapter.exe
+D:\Шаг\Dot.Net\08_DataAdapter\bin\Debug\08_DataAdapter.pdb
+D:\Шаг\Dot.Net\08_DataAdapter\obj\Debug\08_DataAdapter.csprojAssemblyReference.cache
+D:\Шаг\Dot.Net\08_DataAdapter\obj\Debug\_08_DataAdapter.Form.resources
+D:\Шаг\Dot.Net\08_DataAdapter\obj\Debug\_08_DataAdapter.Properties.Resources.resources
+D:\Шаг\Dot.Net\08_DataAdapter\obj\Debug\08_DataAdapter.csproj.GenerateResource.cache
+D:\Шаг\Dot.Net\08_DataAdapter\obj\Debug\08_DataAdapter.csproj.CoreCompileInputs.cache
+D:\Шаг\Dot.Net\08_DataAdapter\obj\Debug\08_DataAdapter.exe
+D:\Шаг\Dot.Net\08_DataAdapter\obj\Debug\08_DataAdapter.pdb
